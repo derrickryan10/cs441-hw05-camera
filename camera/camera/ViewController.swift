@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
         picker.sourceType = .camera
-        //picker.allowsEditing = true
+        picker.allowsEditing = true
         picker.delegate = self
         present(picker, animated: true)
     }
@@ -45,7 +45,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         
         picker.dismiss(animated: true, completion: nil)
         
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else{
+        guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
             return
         }
         imageView.image = image
