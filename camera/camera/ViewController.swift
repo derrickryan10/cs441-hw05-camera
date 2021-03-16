@@ -11,7 +11,10 @@ class ViewController: UIViewController {
     
     //added variables
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var imageView2: UIImageView!
+    @IBOutlet var imageView3: UIImageView!
     @IBOutlet var button: UIButton!
+    var counter = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,17 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
             return
         }
-        imageView.image = image
+        
+        //set images
+        if(counter % 3 == 0){
+            imageView.image = image
+        }
+        else if(counter % 3 == 1){
+            imageView2.image = image
+        }
+        else{
+            imageView3.image = image
+        }
+        counter += 1
     }
 }
