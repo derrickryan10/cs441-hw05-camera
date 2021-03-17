@@ -9,7 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    //added variables
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
@@ -18,16 +17,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //changed button design
-        imageView.backgroundColor = .secondarySystemBackground
-        button.backgroundColor = .systemBlue
-        button.setTitle("Take Picture", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-    
     }
     
-    //added ibaction
+    //button tap
     @IBAction func didTapButton(){
         let picker = UIImagePickerController()
         picker.sourceType = .camera
@@ -37,14 +29,14 @@ class ViewController: UIViewController {
     }
 }
 
-//added extension
+//add
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info:       [UIImagePickerController.InfoKey : Any]) {
         
         picker.dismiss(animated: true, completion: nil)
         
