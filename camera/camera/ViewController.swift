@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageView2: UIImageView!
     @IBOutlet var imageView3: UIImageView!
+    @IBOutlet var imageView4: UIImageView!
+    @IBOutlet var imageView5: UIImageView!
+    @IBOutlet var imageView6: UIImageView!
     @IBOutlet var button: UIButton!
     var counter = 0
 
@@ -45,14 +48,23 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         //set images
-        if(counter % 3 == 0){
+        if(counter % 6 == 0){
             imageView.image = image
         }
-        else if(counter % 3 == 1){
+        else if(counter % 6 == 1){
             imageView2.image = image
         }
-        else{
+        else if(counter % 6 == 2){
             imageView3.image = image
+        }
+        else if(counter % 6 == 3){
+            imageView4.image = image
+        }
+        else if(counter % 6 == 4){
+            imageView5.image = image
+        }
+        else{
+            imageView6.image = image
         }
         counter += 1
     }
